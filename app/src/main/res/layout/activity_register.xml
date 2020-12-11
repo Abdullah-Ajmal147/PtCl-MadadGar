@@ -1,0 +1,190 @@
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:orientation="vertical"
+    tools:context=".activities.RegisterActivity">
+
+    <TextView
+        android:id="@+id/txtregister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="#1C1A1A"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="30dp"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtregister"
+        android:layout_marginBottom="29dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtfullName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:hint="Full Name"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtEmployeeNo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:hint="Employee No"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:hint="Password"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtRepassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:hint="Re enter Password"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtemail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_edit_text"
+                android:gravity="center"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:hint="Contact No"
+                android:inputType="phone"
+                android:textColor="#786A6A"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/region_written"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_toRightOf="@+id/account"
+                android:background="@drawable/bg_edit_text"
+                android:fontFamily="@font/poppins_bold"
+                android:hint="Region"
+                android:textColor="#AB786A6A"
+                android:gravity="center"
+                android:textSize="20dp"></EditText>
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_edit_text"
+                android:textAlignment="center"
+
+                android:theme="@style/SpinnerTheme"
+                />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bg_blue_btn"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:text="Register"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/poppins_extrabold"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/term"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textColor="#FF040404"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="11dp"
+        />
+
+</RelativeLayout>

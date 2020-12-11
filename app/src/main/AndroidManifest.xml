@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.StepUP.madadgaar">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.StepUP.madadgaar.activities.Alert_Screen"></activity>
+        <activity android:name="com.StepUP.madadgaar.activities.No_Internet" />
+        <activity android:name="com.StepUP.madadgaar.activities.About_Us" />
+        <activity android:name="com.StepUP.madadgaar.activities.Not_done" />
+        <activity android:name="com.StepUP.madadgaar.activities.Done_Activity" />
+        <activity android:name="com.StepUP.madadgaar.activities.Sub_Mark" />
+        <activity android:name="com.StepUP.madadgaar.activities.Add_Video_Id" />
+        <activity android:name="com.StepUP.madadgaar.activities.EmployeesActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.AdminActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.LevelCompletedActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.TechnicalActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.LoginActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.QuizActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.Admin" />
+        <activity android:name="com.StepUP.madadgaar.activities.VideoActivity" />
+        <activity android:name="com.StepUP.madadgaar.MainActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.RegisterActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.SubCategoryActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.CategoryActivity" />
+        <activity android:name="com.StepUP.madadgaar.activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.StepUP.madadgaar.activities.After_login" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

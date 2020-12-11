@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">PTCL Madadgaar</string>
+    <string name="hint_name">Employee No</string>
+    <string name="hint_emp_num">Password</string>
+    <string name="hint_repeat_emp">ایمپلائی نمبر دوبارہ لکھیں</string>
+    <string name="register">رجسٹر فارم</string>
+    <string name="logon">Login</string>
+    <string name="next">Next</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">| Register Now</string>
+    <string name="link_signup">Click Here </string>
+    <string name="notification">NOTIFICATION</string>
+    <string name="popup_title">YALLOW</string>
+    <string name="start_quiz">امتحان</string>
+    <string name="technical_training">ٹیکنیکل ٹریننگ</string>
+    <string name="soft_skils">سوفٹ سکلز ٹریننگ</string>
+    <string name="play">اسٹارٹ</string>
+    <string name="term_services">Registering means that you accept our Term and Services</string>
+    <string name="loading">Loading...</string>
+    <string name="description">کیا آپ اس کیٹیگری  کےامتحان کیلیے تیار ہیں؟
+        </string>
+    <string name="ok">OK</string>
+    <string name="communication">کمیونیکیشن کی بنیادی باتیں</string>
+    <string name="customer_services">کسٹمر سروسز</string>
+    <string name="gromming">گرومنگ اور خود اعتمادی</string>
+    <string name="safty">ہیلتھ اور سیفٹی</string>
+    <string name="self_confidence">Self Confidence</string>
+    <string name="selling_techniques">Selling Techniques</string>
+    <string name="work_life_balance">Work Life Balance</string>
+    <string name="work_place_ethics">کام کی جگہ کے آداب</string>
+
+    <string name="configuration_demo">انسٹالیشن اور کنفگریشن</string>
+    <string name="copper_networks">کاپر نیٹ ورک</string>
+    <string name="fiber_test_equipment">فائبر نیٹ ورک ٹیسٹ ایکوپمنٹ</string>
+    <string name="copper_test_equipments">کاپر ٹیسٹ ایکوپمنٹ</string>
+    <string name="gpon_installation">(جی پی او این) نیٹ ورک انسٹالیشن</string>
+    <string name="optical_fiber">آپٹیکل فائبر جوائنٹنگ</string>
+    <string name="retry">RETRY</string>
+    <string name="not_played">NOT PLAY</string>
+    <string name="alert_eng">Are you ready for quiz of this category?</string>
+    <string name="level_completed">Level Completed</string>
+
+    <string-array name="region_list">
+        <item>abc</item>
+    </string-array>
+
+    <string name="ptcl">PTCL MADADGAAR</string>
+    <string name="admin">Hi ADMIN,</string>
+    <string name="welcome">Welcome to PTCL Madadgaar Admin Portal</string>
+    <string name="status">STATUS</string>
+    <string name="total_users">Total Registered Users</string>
+    <string name="filter">FILTER</string>
+    <string name="region">Select Region</string>
+    <string name="dropdown">Dropdown</string>
+    <string name="search">Search</string>
+    <string name="emp_no">Employee No.</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="region2">Region</string>
+    <string name="category">Category</string>
+    <string name="score">Score</string>
+    <string name="tcc">TCC</string>
+    <string name="lr">Download LR</string>
+
+    <string name="About_Us">Step up is a Digital Training Course Having five Technical Modules named as Power Plant,Metro Transmission,Transport Networks,Switching and Radio wireless System.A soft skills Module Customer Care is part of each course.The Objective of Step Up Trainig Course is to enhance the knowlegde and skill sets of non-mangement employees working in the above mentioned five domains so that they can perform their jobs more effectively and efficiently.The training course entail short quizzes for each Module.</string>
+    <string name="Alert">Hi there, \nWelcome to the Step Up.Your login is being approved by the adamin Please wait until your approval.For any update contact our support center through the link below.Sorry for inconveniense.</string>
+
+    <string name="sr">Download SR</string>
+    <string name="help"><u>Help and Support Center</u></string>
+    <string name="term"><u>By registering,you agree all our terms and conditions</u></string>
+    <string name="index">Sr.#</string>
+
+    <string name="open">Open</string>
+    <string name="share_using">Share apps</string>
+    <string name="close">Close</string>
+
+
+    <string-array name="categories">
+        <item>PLq9TNzZPsJ4nnONoNDJfG_miouqnwsFKU</item>
+        <item>PLq9TNzZPsJ4kDqDTu-KV8e85hi85YVprD</item>
+        <item>PLq9TNzZPsJ4mLvZiFVxRMLZeo3CcYvG7r</item>
+        <item>PLq9TNzZPsJ4lKugyYkfE-Bt74C6ZVNxOv</item>
+        <item>PLq9TNzZPsJ4l2YGC_S09aj9IxLYu-s6Dl</item>
+        <item>PLq9TNzZPsJ4naB3LBqdnQP5YrTpvO-px9</item>
+        <item>PLq9TNzZPsJ4kfuBdLt1nNazXUHU5x-7qs</item>
+        <item>PLq9TNzZPsJ4lf42F9iAMPKQBalbhybHj2</item>
+        <item>PLq9TNzZPsJ4nV-lCEe8QMEitPraLgfhfN</item>
+        <item>PLq9TNzZPsJ4levfF7k7Fydwh8p1RntZD8</item>
+        <item>PLq9TNzZPsJ4m6-ywGzRGnPdsEinZofKuj</item>
+    </string-array>
+
+    <string-array name="Main_Topic">
+        <item><b>Radio Wireless System</b></item>
+        <item><b>Transport Network</b></item>
+        <item><b>Metro Transmission</b></item>
+        <item><b>Power Plant</b></item>
+        <item><b>Swithing</b></item>
+
+    </string-array>
+
+</resources>

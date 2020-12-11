@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.Add_Video_Id">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<EditText
+    android:id="@+id/ed_title1"
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Catagory"
+    android:layout_marginLeft="30dp"
+    />
+    <EditText
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:layout_marginLeft="70dp"
+        />
+    <EditText
+        android:id="@+id/playlistId1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="PlayList Id"
+        android:layout_marginLeft="70dp"
+        />
+            <EditText
+                android:id="@+id/videoId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="first Video Id"
+                android:layout_marginLeft="70dp"
+                />
+
+            <EditText
+                android:id="@+id/VideoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Video Title"
+                android:layout_marginLeft="70dp"
+                />
+            <EditText
+                android:id="@+id/Video_Counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Video Counter"
+                android:layout_marginLeft="70dp"
+                />
+
+            <Button
+        android:id="@+id/btnAdd"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD Data"
+        />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

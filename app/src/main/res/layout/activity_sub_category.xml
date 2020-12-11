@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_parent"
+    tools:context=".activities.SubCategoryActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/yallow_dark"
+        android:id="@+id/top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/communication"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListCommunication"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/communication_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:textAlignment="viewStart"
+                    android:text="@string/communication"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent"
+                    app:layout_constraintStart_toStartOf="@+id/title"
+                    app:layout_constraintTop_toTopOf="@+id/title" />
+
+                <TextView
+                    android:id="@+id/scorePercent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBar"
+                    app:layout_constraintStart_toStartOf="@+id/imageView6"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBar" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image" />
+
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/communication"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/title"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="@+id/title"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/customer_service"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListCustomerServices"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/services_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/customer_services"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarCustomerServices"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentCustomerServices"
+                    app:layout_constraintStart_toStartOf="@+id/title2"
+                    app:layout_constraintTop_toTopOf="@+id/title2" />
+
+                <TextView
+                    android:id="@+id/scorePercentCustomerServices"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarCustomerServices"
+                    app:layout_constraintStart_toStartOf="@+id/imageView13"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarCustomerServices" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image2" />
+
+
+                <ImageView
+                    android:id="@+id/statusCustomerServices"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/customer_service"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/title2"
+                    app:layout_constraintEnd_toStartOf="@+id/statusCustomerServices"
+                    app:layout_constraintTop_toTopOf="@+id/title2"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/grooming"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListGrooming"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageGrooming"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/grooming_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleGrooming"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/gromming"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageGrooming"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarGrooming"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentGrooming"
+                    app:layout_constraintStart_toStartOf="@+id/titleGrooming"
+                    app:layout_constraintTop_toTopOf="@+id/titleGrooming" />
+
+                <TextView
+                    android:id="@+id/scorePercentGrooming"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarGrooming"
+                    app:layout_constraintStart_toStartOf="@+id/groomingCircut"
+                    app:layout_constraintEnd_toEndOf="@+id/groomingCircut"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarGrooming" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutGrooming"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageGrooming" />
+
+
+                <ImageView
+                    android:id="@+id/statusGrooming"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/grooming"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/groomingCircut"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleGrooming"
+                    app:layout_constraintEnd_toStartOf="@+id/statusGrooming"
+                    app:layout_constraintTop_toTopOf="@+id/titleGrooming"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/safty"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListSafty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageSafty"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/safty_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleSafty"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:text="@string/safty"
+                    android:textSize="18dp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageSafty"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarSafty"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentSafty"
+                    app:layout_constraintStart_toStartOf="@+id/titleSafty"
+                    app:layout_constraintTop_toTopOf="@+id/titleSafty" />
+
+                <TextView
+                    android:id="@+id/scorePercentSafty"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarSafty"
+                    app:layout_constraintStart_toStartOf="@+id/saftyCircut"
+                    app:layout_constraintEnd_toEndOf="@+id/saftyCircut"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarSafty" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutSafty"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageSafty" />
+
+
+                <ImageView
+                    android:id="@+id/statusSafty"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/safty"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/saftyCircut"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleSafty"
+                    app:layout_constraintEnd_toStartOf="@+id/statusSafty"
+                    app:layout_constraintTop_toTopOf="@+id/titleSafty"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/work_place_ethics"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListWorkPlaceEthics"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageWork_place_ethics"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/ethics_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleWork_place_ethics"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/work_place_ethics"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageWork_place_ethics"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarWork_place_ethics"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentWork_place_ethics"
+                    app:layout_constraintStart_toStartOf="@+id/titleWork_place_ethics"
+                    app:layout_constraintTop_toTopOf="@+id/titleWork_place_ethics" />
+
+                <TextView
+                    android:id="@+id/scorePercentWork_place_ethics"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarWork_place_ethics"
+                    app:layout_constraintStart_toStartOf="@+id/ethicsCircut"
+                    app:layout_constraintEnd_toEndOf="@+id/ethicsCircut"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarWork_place_ethics" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutWork_place_ethics"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageWork_place_ethics" />
+
+
+                <ImageView
+                    android:id="@+id/statusWork_place_ethics"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/work_place_ethics"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/ethicsCircut"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleWork_place_ethics"
+                    app:layout_constraintEnd_toStartOf="@+id/statusWork_place_ethics"
+                    app:layout_constraintTop_toTopOf="@+id/titleWork_place_ethics"
+                    app:srcCompat="@drawable/circuit"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

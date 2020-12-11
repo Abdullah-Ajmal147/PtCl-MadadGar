@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/half_white"
+    android:layout_height="100dp">
+
+
+    <Button
+        android:id="@+id/startQuiz"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_start_quiz"
+        android:fontFamily="@font/poppins_bold"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:text="Quiz"
+        android:textColor="@color/bg_notifacation"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

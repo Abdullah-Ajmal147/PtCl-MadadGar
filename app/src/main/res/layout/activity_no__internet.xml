@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.No_Internet">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.363"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/no_internet" />
+    <Button
+        android:id="@+id/RetryConnection"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Retry"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:fontFamily="@font/poppins_bold"
+        android:background="#FBF7A3"
+        />
+
+
+
+</LinearLayout>

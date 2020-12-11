@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "270510103393",
+    "firebase_url": "https://ptcldb-d822c.firebaseio.com",
+    "project_id": "ptcldb-d822c",
+    "storage_bucket": "ptcldb-d822c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270510103393:android:822df6bbb336fdec240320",
+        "android_client_info": {
+          "package_name": "com.StepUP.madadgaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270510103393-qdb5bqjhqgjqlsf2eqrbf3q1jsivol44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuIGnlJg2wTkY4DVupyOYq2tX9MZ0rQk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270510103393-qdb5bqjhqgjqlsf2eqrbf3q1jsivol44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

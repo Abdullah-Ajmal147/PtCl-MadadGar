@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/yallow_dark"
+        android:id="@+id/top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/configuration"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListConfiguration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageConfiguration"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/configuration_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleConfiguration"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:text="@string/configuration_demo"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageConfiguration"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarConfiguration"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentConfiguration"
+                    app:layout_constraintStart_toStartOf="@+id/titleConfiguration"
+                    app:layout_constraintTop_toTopOf="@+id/titleConfiguration" />
+
+                <TextView
+                    android:id="@+id/scorePercentConfiguration"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    android:fontFamily="@font/montserrat_regular"
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarConfiguration"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarConfiguration" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutConfiguration"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageConfiguration" />
+
+
+                <ImageView
+                    android:id="@+id/statusConfiguration"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/configuration"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleConfiguration"
+                    app:layout_constraintEnd_toStartOf="@+id/statusConfiguration"
+                    app:layout_constraintTop_toTopOf="@+id/titleConfiguration"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/copper_network"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListCopperNetworks"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageCopper_network"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/copper_network_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleCopper_network"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/copper_networks"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageCopper_network"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarCopper_network"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentCopper_network"
+                    app:layout_constraintStart_toEndOf="@+id/imageCopper_network"
+                    app:layout_constraintTop_toTopOf="@+id/titleCopper_network" />
+
+                <TextView
+                    android:id="@+id/scorePercentCopper_network"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    android:fontFamily="@font/montserrat_regular"
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarCopper_network"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                    app:layout_constraintStart_toStartOf="@+id/imageView8"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarCopper_network" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutCopper_network"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageCopper_network" />
+
+
+                <ImageView
+                    android:id="@+id/statusCopper_network"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/copper_network"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleCopper_network"
+                    app:layout_constraintEnd_toStartOf="@+id/statusCopper_network"
+                    app:layout_constraintTop_toTopOf="@+id/titleCopper_network"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fiber_test_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListFiberTestEquipment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageFiber_test_equipment"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/fiber_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleFiber_test_equipment"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:text="@string/fiber_test_equipment"
+                    android:textSize="18dp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageFiber_test_equipment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarFiber_test_equipment"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentFiber_test_equipment"
+                    app:layout_constraintStart_toStartOf="@+id/titleFiber_test_equipment"
+                    app:layout_constraintTop_toTopOf="@+id/titleFiber_test_equipment" />
+
+                <TextView
+                    android:id="@+id/scorePercentFiber_test_equipment"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:text="        "
+                    android:fontFamily="@font/montserrat_regular"
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarFiber_test_equipment"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                    app:layout_constraintStart_toStartOf="@+id/imageView9"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarFiber_test_equipment" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutFiber_test_equipment"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageFiber_test_equipment" />
+
+
+                <ImageView
+                    android:id="@+id/statusFiber_test_equipment"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fiber_test_equipment"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleFiber_test_equipment"
+                    app:layout_constraintEnd_toStartOf="@+id/statusFiber_test_equipment"
+                    app:layout_constraintTop_toTopOf="@+id/titleFiber_test_equipment"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/copper_test_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListCopperTestEquipment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageCopper_test_equipment"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/copper_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleCopper_test_equipment"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/copper_test_equipments"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageCopper_test_equipment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarCopper_test_equipment"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentCopper_test_equipment"
+                    app:layout_constraintStart_toStartOf="@+id/titleCopper_test_equipment"
+                    app:layout_constraintTop_toTopOf="@+id/titleCopper_test_equipment" />
+
+                <TextView
+                    android:id="@+id/scorePercentCopper_test_equipment"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarCopper_test_equipment"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                    app:layout_constraintStart_toStartOf="@+id/imageView10"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarCopper_test_equipment" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutCopper_test_equipment"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageCopper_test_equipment" />
+
+
+                <ImageView
+                    android:id="@+id/statusCopper_test_equipment"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toTopOf="@+id/copper_test_equipment"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleCopper_test_equipment"
+                    app:layout_constraintEnd_toStartOf="@+id/statusCopper_test_equipment"
+                    app:layout_constraintTop_toTopOf="@+id/titleCopper_test_equipment"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gpon_installation"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListGponInstallation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageGpon_installation"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/gpon_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleGpon_installation"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/gpon_installation"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageGpon_installation"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarGpon_installation"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentGpon_installation"
+                    app:layout_constraintStart_toStartOf="@+id/titleGpon_installation"
+                    app:layout_constraintTop_toTopOf="@+id/titleGpon_installation" />
+
+                <TextView
+                    android:id="@+id/scorePercentGpon_installation"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarGpon_installation"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView11"
+                    app:layout_constraintStart_toStartOf="@+id/imageView11"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarGpon_installation" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutGpon_installation"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageGpon_installation" />
+
+
+                <ImageView
+                    android:id="@+id/statusGpon_installation"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/gpon_installation"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleGpon_installation"
+                    app:layout_constraintEnd_toStartOf="@+id/statusGpon_installation"
+                    app:layout_constraintTop_toTopOf="@+id/titleGpon_installation"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/optical_fiber"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/half_white"
+                android:onClick="playListOpticalFiber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageOptical_fiber"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/optical_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/titleOptical_fiber"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dubai_bold"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/optical_fiber"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageOptical_fiber"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBarOptical_fiber"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:progressBackgroundTint="@color/green"
+                    android:progressTint="@color/yallow_dark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercentOptical_fiber"
+                    app:layout_constraintStart_toStartOf="@+id/titleOptical_fiber"
+                    app:layout_constraintTop_toTopOf="@+id/titleOptical_fiber" />
+
+                <TextView
+                    android:id="@+id/scorePercentOptical_fiber"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/not_played"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="        "
+                    app:layout_constraintBottom_toBottomOf="@+id/scoreBarOptical_fiber"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                    app:layout_constraintStart_toStartOf="@+id/imageView12"
+                    app:layout_constraintTop_toTopOf="@+id/scoreBarOptical_fiber" />
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutOptical_fiber"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageOptical_fiber" />
+
+
+                <ImageView
+                    android:id="@+id/statusOptical_fiber"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/not_playd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/optical_fiber"
+                    android:visibility="invisible"
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleOptical_fiber"
+                    app:layout_constraintEnd_toStartOf="@+id/statusOptical_fiber"
+                    app:layout_constraintTop_toTopOf="@+id/titleOptical_fiber"
+                    app:srcCompat="@drawable/circuit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

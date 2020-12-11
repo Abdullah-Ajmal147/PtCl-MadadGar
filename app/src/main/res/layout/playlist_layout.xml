@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SubCategoryActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/yallow_dark"
+        android:id="@+id/top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/communication"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:onClick="playListCommunication"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="113dp"
+                android:background="@drawable/shoaib"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/communication"
+                android:textSize="18dp"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="@+id/image" />
+
+            <TextView
+                android:id="@+id/subTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Farmay bank"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <ProgressBar
+                android:id="@+id/scoreBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/yallow_parent"
+                app:layout_constraintBottom_toBottomOf="@+id/scorePercent"
+                app:layout_constraintEnd_toStartOf="@+id/scorePercent"
+                app:layout_constraintStart_toStartOf="@+id/subTitle"
+                app:layout_constraintTop_toBottomOf="@+id/subTitle" />
+
+            <TextView
+                android:id="@+id/scorePercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="70%"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subTitle" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/customer_service"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListCustomerServices"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/customer_services"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image2"
+                    app:layout_constraintTop_toTopOf="@+id/image2" />
+
+                <TextView
+                    android:id="@+id/subTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title2"
+                    app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent2"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent2"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle2"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle2" />
+
+                <TextView
+                    android:id="@+id/scorePercent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle2" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/grooming"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListGrooming"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/gromming"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image3"
+                    app:layout_constraintTop_toTopOf="@+id/image3" />
+
+                <TextView
+                    android:id="@+id/subTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title3"
+                    app:layout_constraintTop_toBottomOf="@+id/title3" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar3"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent3"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent3"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle3"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle3" />
+
+                <TextView
+                    android:id="@+id/scorePercent3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle3"/>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/safty"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListSafty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image4"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/safty"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image4"
+                    app:layout_constraintTop_toTopOf="@+id/image4" />
+
+                <TextView
+                    android:id="@+id/subTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title4"
+                    app:layout_constraintTop_toBottomOf="@+id/title4" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar4"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent4"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent4"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle4"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle4" />
+
+                <TextView
+                    android:id="@+id/scorePercent4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle4" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/self_confidence"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListSelfConfidence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image5"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/self_confidence"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image5"
+                    app:layout_constraintTop_toTopOf="@+id/image5" />
+
+                <TextView
+                    android:id="@+id/subTitle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title5"
+                    app:layout_constraintTop_toBottomOf="@+id/title5" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar5"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent5"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent5"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle5"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle5" />
+
+                <TextView
+                    android:id="@+id/scorePercent5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle5" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/selling_techniques"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListSellingTechniques"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image6"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/selling_techniques"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image6"
+                    app:layout_constraintTop_toTopOf="@+id/image6" />
+
+                <TextView
+                    android:id="@+id/subTitle6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title6"
+                    app:layout_constraintTop_toBottomOf="@+id/title6" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar6"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent6"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent6"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle6"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle6" />
+
+                <TextView
+                    android:id="@+id/scorePercent6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle6" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/work_life_balance"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListWorkLifeBalance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image7"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/work_life_balance"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image7"
+                    app:layout_constraintTop_toTopOf="@+id/image7" />
+
+                <TextView
+                    android:id="@+id/subTitle7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title7"
+                    app:layout_constraintTop_toBottomOf="@+id/title7" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar7"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent7"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent7"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle7"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle7" />
+
+                <TextView
+                    android:id="@+id/scorePercent7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle7" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/work_place_ethics"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="playListWorkPlaceEthics"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image8"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/shoaib"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/title8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/work_place_ethics"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toEndOf="@+id/image8"
+                    app:layout_constraintTop_toTopOf="@+id/image8" />
+
+                <TextView
+                    android:id="@+id/subTitle8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Farmay bank"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/title8"
+                    app:layout_constraintTop_toBottomOf="@+id/title8" />
+
+                <ProgressBar
+                    android:id="@+id/scoreBar8"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@color/yallow_parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/scorePercent8"
+                    app:layout_constraintEnd_toStartOf="@+id/scorePercent8"
+                    app:layout_constraintStart_toStartOf="@+id/subTitle8"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle8" />
+
+                <TextView
+                    android:id="@+id/scorePercent8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="70%"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTitle8" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

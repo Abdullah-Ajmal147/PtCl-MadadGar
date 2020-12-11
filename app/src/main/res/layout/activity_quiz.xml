@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_popup_body"
+    tools:context=".activities.QuizActivity">
+
+    <View
+        android:id="@+id/quizDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <RelativeLayout-->
+
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:background="@drawable/bg_quiz_counter"-->
+<!--        android:padding="2dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/btnNextQuestion"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/btnNextQuestion">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/counter"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:text="1/10"-->
+<!--            android:textColor="@color/blue_dark"-->
+<!--            android:textSize="24dp">-->
+
+<!--        </TextView>-->
+<!--    </RelativeLayout>-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizDivider"
+        app:layout_constraintVertical_bias="1.0"
+        app:swipeable="false">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <TextView
+        android:id="@+id/showResults"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/colorWhite"
+        android:visibility="gone"
+        android:background="@drawable/bg_start_quiz"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="@+id/viewPager"
+        android:text="Next"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_bold"
+         />
+    <TextView
+        android:id="@+id/btnNextQuestion"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/colorWhite"
+        android:visibility="gone"
+        android:background="@drawable/bg_start_quiz"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="@+id/viewPager"
+        android:text="Next"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
