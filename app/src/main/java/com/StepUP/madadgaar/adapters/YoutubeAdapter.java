@@ -45,10 +45,10 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
     private boolean quizAble;
     private int videos_count;
     TextView title;
-    String quiz;
+   // String quiz;
     DatabaseReference rootRef;
     public YoutubeAdapter(Context context, List<YoutubeData> playlistItems, String play_list_id, String play_list_title,
-                          String playing_video_id, boolean quizAble, int videos_count,TextView title,String quiz,DatabaseReference rootRef) {
+                          String playing_video_id, boolean quizAble, int videos_count,TextView title,DatabaseReference rootRef) {
         this.context = context;
         this.playlistItems = playlistItems;
         this.selected_category_color = selected_category_color;
@@ -58,7 +58,7 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
         this.quizAble = quizAble;
         this.videos_count = videos_count;
         this.title=title;
-        this.quiz=quiz;
+      //  this.quiz=quiz;
         this.rootRef=rootRef;
 
 
@@ -100,7 +100,7 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
                     //Toast.makeText(context,abc,Toast.LENGTH_LONG).show();
                     if(abc.equals("complete")) {
                         //   String abc="no";//&& quiz!=null && quiz!="null"
-                        if (quiz != null && quiz.equals("no") && quiz != "null") {
+                        if (playlistItems.get(position-1).getQuiz() != null && playlistItems.get(position-1).getQuiz().equals("no") && playlistItems.get(position-1).getQuiz() != "null") {
                             Intent ne = new Intent(context, Done_Activity.class);
                             boolean ques1 = true;
                             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -171,10 +171,24 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
                 }
             });
         } else {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            String reTitle=sharedPreferences.getString("re_title","");
 
+            /*if(reTitle.equals(""))
+            {
+                title.setText(reTitle);
+            }else {*/
+/*       if(reTitle!=null && reTitle.equals("")) {
+                play_list_title=reTitle;
+                title.setText(play_list_title);
+            }
 
+       else {
+                title.setText(play_list_title);
+            }
+            //Toast.makeText(c)
+            title.setText(play_list_title);*/
             holder.title.setText(playlistItems.get(position).getTitle());
-           title.setText(play_list_title);
 
             if (playlistItems.get(position).getVedio_id().equals(playing_video_id)) {
 

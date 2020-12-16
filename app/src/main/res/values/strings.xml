@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PTCL Madadgaar</string>
+    <string name="app_name">Step Up</string>
     <string name="hint_name">Employee No</string>
     <string name="hint_emp_num">Password</string>
     <string name="hint_repeat_emp">ایمپلائی نمبر دوبارہ لکھیں</string>
@@ -46,7 +46,7 @@
 
     <string name="ptcl">PTCL MADADGAAR</string>
     <string name="admin">Hi ADMIN,</string>
-    <string name="welcome">Welcome to PTCL Madadgaar Admin Portal</string>
+    <string name="welcome">Welcome to Step-up Admin Portal</string>
     <string name="status">STATUS</string>
     <string name="total_users">Total Registered Users</string>
     <string name="filter">FILTER</string>
@@ -94,7 +94,7 @@
         <item><b>Transport Network</b></item>
         <item><b>Metro Transmission</b></item>
         <item><b>Power Plant</b></item>
-        <item><b>Swithing</b></item>
+        <item><b>Switching</b></item>
 
     </string-array>
 

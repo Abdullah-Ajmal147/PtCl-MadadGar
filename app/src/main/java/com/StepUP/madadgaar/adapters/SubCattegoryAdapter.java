@@ -3,6 +3,7 @@ package com.StepUP.madadgaar.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,7 @@ public class SubCattegoryAdapter extends RecyclerView.Adapter<SubCategoryViewHol
         String playListId = video_id_model.getSub_playlist1();
         String totalQuiz = "5";
         subCategoryViewHolder.txtTopicTitle.setText(video_id_model.getSub_title1());
+        subCategoryViewHolder.txtTopicTitle.setTypeface(Typeface.create("poppins_extrabold",Typeface.BOLD));
         subCategoryViewHolder.txtnumberIncrease.setText(Integer.toString(i + 1) + ".  ");
         //subCategoryViewHolder.checkbox.findViewById(R.id.checkbox);
         calculateResult(playListId, 5, holder);

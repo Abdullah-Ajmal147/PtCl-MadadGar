@@ -19,10 +19,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
+   <FrameLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+       android:visibility="gone"
         android:background="#fde700"
         android:orientation="horizontal">
 
@@ -45,8 +46,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Question"
-        android:layout_width="match_parent"
-        android:layout_height="286dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_marginTop="2dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -56,16 +57,16 @@
 
         <TextView
             android:id="@+id/question"
-            android:layout_width="385dp"
-            android:layout_height="261dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="251dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
             android:background="@drawable/quiz_container"
             android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
             android:hint="What was the nationality of 'Juilian Assange' who founded WikiLeaks in 2006"
             android:paddingLeft="24dp"
             android:paddingTop="20dp"
-            android:gravity="center"
             android:paddingRight="24dp"
             android:textColor="#202020"
             android:textSize="24dp"

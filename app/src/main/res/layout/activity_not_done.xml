@@ -201,6 +201,5 @@ android:layout_gravity="start"
 android:background="#E4ECEB"
 android:fitsSystemWindows="true">
 <include layout="@layout/nav_layout"/>
-
 </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

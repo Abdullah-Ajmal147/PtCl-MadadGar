@@ -84,6 +84,8 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     TextView txthome,aboutUs,ContacUs,Logout,titleName;
     private DatabaseReference rootRef;
     private UserPreferences cache;
+    SharedPreferences sharedPreferences;
+    YouTubePlayer mYoutubePlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,7 +119,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         play_list_title = getIntent().getStringExtra("title");
       //  setVideoTitle(play_list_title);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String abc=sharedPreferences.getString("subCategoryName","null");
         playingTitle.setText(abc);
@@ -131,13 +133,12 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         list_video_id = getIntent().getStringExtra("list_video_id");
 
 
+            if (list_video_id.equals("false")) {
+                playing_video_id = getIntent().getStringExtra("first_video_id");
+            } else {
+                playing_video_id = list_video_id;
 
-          if (list_video_id.equals("false")) {
-              playing_video_id = getIntent().getStringExtra("first_video_id");
-          } else {
-              playing_video_id = list_video_id;
-
-          }
+            }
 
 
         txthome.setOnClickListener(new View.OnClickListener() {
@@ -157,8 +158,10 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         ContacUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
+                String contact = "+923335311123";
+                String message ="Dear \n" +
+                        "Raheem Zeeshan\n" +
+                        "Manager (Training & Development)";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -166,7 +169,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                     e.printStackTrace();
                 }
                 Intent i = new Intent(Intent.ACTION_VIEW);
-              /*  i.setAction(Intent.ACTION_SEND);
+              /* i.setAction(Intent.ACTION_SEND);
                 i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 i.setType("text/plain");*/
                 i.setData(Uri.parse(url));
@@ -216,21 +219,6 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
     }
 
-   /* private void setVideoTitle(String play_list_title) {
-        if (play_list_title.equals(Constants.CONFIGURATION_DEMO))
-        {playingTitle.setText("انسٹالیشن اور کنفگریشن");
-        }
-        if (play_list_title.equals(Constants.COPPER_NETWORKS)){playingTitle.setText("کاپر نیٹ ورک");}
-        if (play_list_title.equals(Constants.FIBER_TEST_EQUIPMENT)){playingTitle.setText("فائبر نیٹ ورک ٹیسٹ ایکوپمنٹ");}
-        if (play_list_title.equals(Constants.COPPER_TEST_EQUIPMENTS)){playingTitle.setText("کاپر ٹیسٹ ایکوپمنٹ");}
-        if (play_list_title.equals(Constants.GPON_INSTALLATION)){playingTitle.setText("(جی پی او این) نیٹ ورک انسٹالیشن");}
-        if (play_list_title.equals(Constants.OPTICAL_FIBER)){playingTitle.setText("آپٹیکل فائبر جوائنٹنگ");}
-        if (play_list_title.equals(Constants.COMMUNICATION)){playingTitle.setText("کمیونیکیشن کی بنیادی باتیں");}
-        if (play_list_title.equals(Constants.CUSTOMER_SERVICE)){playingTitle.setText("کسٹمر سروسز");}
-        if (play_list_title.equals(Constants.GROOMING)){playingTitle.setText("گرومنگ اور خود اعتمادی");}
-        if (play_list_title.equals(Constants.SAFTY)){playingTitle.setText("ہیلتھ اور سیفٹی");}
-        if (play_list_title.equals(Constants.WORK_PLACE_ETHICS)){playingTitle.setText("کام کی جگہ کے آداب");}
-    }*/
 
     private void quizAble(final int videos_count){
 
@@ -274,8 +262,9 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray jsonArray = jsonObject.getJSONArray("items");
-
-                            for (int a = 0; a <= jsonArray.length(); a++) {
+                            boolean isSavedVideoFound=false;
+                            String savedVideo=sharedPreferences.getString("pauseVideoId","");
+                            for (int a = 0; a < jsonArray.length(); a++) {
 
 
                                 JSONObject item = jsonArray.getJSONObject(a);
@@ -287,14 +276,54 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                                 String title = snippet.getString("title");
                                 String quiz = getIntent().getStringExtra("quiz");
                                 String description = snippet.getString("description");
+                                if(savedVideo!=null && !savedVideo.equals(""))
+                                {
+                                    if(savedVideo.equals(video_id))
+                                        isSavedVideoFound=true;
+                                }
                                 YoutubeData youtubeData = new YoutubeData(title, thumbnail, video_id);
+                                youtubeData.setQuiz(quiz);
                                 playListItems.add(youtubeData);
-                                adapter = new YoutubeAdapter(VideoActivity.this, playListItems, play_list_id, play_list_title,
-                                        playing_video_id, quizAble, videos_count,titleName,quiz,rootRef);
-                                recyclerView.setAdapter(adapter);
-
 
                             }
+                            if(!isSavedVideoFound)
+                            {
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("pauseVideoId","");
+
+                                editor.apply();
+                                editor.commit();
+                            }
+                            String pauseVideoId=sharedPreferences.getString("pauseVideoId","");
+                            String title=sharedPreferences.getString("re_title","");
+
+                            if(pauseVideoId!=null && !pauseVideoId.equals(""))
+                            {
+                                playing_video_id=pauseVideoId;
+                            }
+                            String videoTitle="";
+                            for(YoutubeData yd:playListItems)
+                            {
+                                if(yd.getVedio_id().equals(playing_video_id))
+                                {
+                                    title=yd.getTitle();
+                                    break;
+                                }
+
+                            }
+                            titleName.setText(title);
+                            /*if(title!=null && title.equals("")){
+                                play_list_title=title;
+                                //playingTitle.setText(play_list_title);
+                               // intent.putExtra("title", data);
+                            }*/
+                                  adapter = new YoutubeAdapter(VideoActivity.this, playListItems, play_list_id, play_list_title,
+                                    playing_video_id, quizAble, videos_count,titleName,rootRef);
+                               recyclerView.setAdapter(adapter);
+                                if(mYoutubePlayer!=null)
+                                    mYoutubePlayer.loadVideo(playing_video_id,0);
+
+
 
                         } catch (JSONException e) {
                         }
@@ -306,22 +335,11 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                 Toast.makeText(VideoActivity.this, "error"+error.networkResponse.statusCode, Toast.LENGTH_LONG).show();
             }
         });
-
         requestQueue.add(stringRequest);
-
     }
-
-    private void startQuiz() {
-        Intent intent = new Intent(VideoActivity.this, QuizActivity.class);
-        intent.putExtra("vedio_id", playing_video_id);
-        intent.putExtra("playListId", play_list_id);
-        startActivity(intent);
-
-    }
-
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer youTubePlayer, boolean wasRestored) {
-
+         mYoutubePlayer=youTubePlayer;
         youTubePlayer.setPlayerStateChangeListener(new YouTubePlayer.PlayerStateChangeListener() {
             @Override
             public void onLoading() {
@@ -348,27 +366,44 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                 editor.putString("currentVideo",current);
                 editor.putString("index", String.valueOf(index));
                 editor.putInt("index",index);
+                String currentVideoId=sharedPreferences.getString("currentVideo","");
+                int currentIndex=0;
+                for(YoutubeData yd: playListItems)
+                {
+                    if(yd.getVedio_id().equals(currentVideoId))
+                    {
+                        currentIndex=playListItems.indexOf(yd);
+                        break;
+                    }
+                }
+
+                //editor.putInt("pauseVideoTime",0);
+                //editor.putString("pauseVideoId","");
+
                 editor.apply();
                 editor.commit();
                 //Toast.makeText(getApplicationContext(),"test mode"+current,Toast.LENGTH_LONG).show();
 
+                String pauseVideoId=sharedPreferences.getString("pauseVideoId","");
+                int pauseVideoTime=sharedPreferences.getInt("pauseVideoTime",0);
+                String title=sharedPreferences.getString("re_title","");
+               // Toast.makeText(getApplicationContext(),title,Toast.LENGTH_LONG).show();
+                if(!pauseVideoId.equals("") && pauseVideoId.equals(playing_video_id)) {
+                    youTubePlayer.seekToMillis(pauseVideoTime);
+                    editor.putInt("pauseVideoTime", 0);
+                    editor.putString("pauseVideoId", "");
+                    editor.putString("re_title","");
+                    editor.apply();
+                    editor.commit();
 
-           /* if(abc=="") {
-                int value = Integer.parseInt(abc);
-                for (int i = 0; i == value; i++) {
-                    int next= Integer.parseInt(abc);
-                    next++;
-                    Toast.makeText(getApplicationContext(),next,Toast.LENGTH_LONG).show();
                 }
-            }
-            else{
-
-            }*/
             }
             int index = 0;
             @Override
             public void onVideoEnded() {
+                //working now:
 
+                //Toast.makeText(getApplicationContext(),"onVideoEnded",Toast.LENGTH_LONG).show();
                 String play= String.valueOf(playListItems.size());
 
                 Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
@@ -406,8 +441,13 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                     editor.commit();
                     intent.putExtra("list_video_id", playListItems.get(currentIndex + 1).getVedio_id());
                     intent.putExtra("playListId", play_list_id);
+                    String end="videoEnd";
 
+                    editor.putString("onVideoEnd", end);
+                    editor.commit();
+                    editor.apply();
                     String data= playListItems.get(currentIndex+1).getTitle();
+                    editor.putString("currentVideo",playing_video_id);
                     intent.putExtra("title", data);
                    // Toast.makeText(getApplicationContext(),data,Toast.LENGTH_LONG).show();
 
@@ -437,11 +477,45 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
             @Override
             public void onPaused() {
+                //working now:::
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                String End=sharedPreferences.getString("onVideoEnd","");
+                int currentIndex=0;
+               // String end=getIntent().getStringExtra("onVideoEnd");
+                if(End.equals("videoEnd"))
+                {
+                    //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("pauseVideoTime", 0);
+                    editor.putString("pauseVideoId", "");
+                    editor.putString("re_title","");
+                    editor.putString("onVideoEnd","");
+                    editor.apply();
+                    editor.commit();
+                }else {
+               int time=youTubePlayer.getCurrentTimeMillis();
 
+                //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("pauseVideoTime",time);
+                editor.putString("pauseVideoId",playing_video_id);
+                    String currentVideoId=sharedPreferences.getString("currentVideo","");
+                    for(YoutubeData yd: playListItems)
+                    {
+                        if(yd.getVedio_id().equals(currentVideoId))
+                        {
+                            currentIndex=playListItems.indexOf(yd);
+                            break;
+                        }
+                    }
+                    String ab_title=playListItems.get(currentIndex).getTitle();
+                    editor.putString("re_title",ab_title);
+                    editor.apply();
+                    editor.commit();
 
+                  // Toast.makeText(getApplicationContext(), title, Toast.LENGTH_LONG).show();
 
-
-
+                }
             }
 
             @Override
@@ -461,19 +535,52 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
                 Log.d("Steak: "," "+i);
             }
         });
-        youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
-        if (!wasRestored) {
+       //youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
+        /*if (!wasRestored) {
 //            youTubePlayer.cueVideo(playing_video_id);
             String PLAYLIST_COMMUNICATION = getIntent().getStringExtra("first_video_id");
 
             youTubePlayer.loadVideo(playing_video_id,0);
 
             //playing_video_id
-        }
+        }*/
     }
 
     int a=0;
+    @Override
+    public void onPause() {
+       /* if(youTubePlayer!=null) {
+            int time=youTubePlayer.getCurrentTimeMillis();
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("pauseVideoTime", time);
+            editor.putString("pauseVideoId", playing_video_id);
 
+            editor.apply();
+            editor.commit();
+            super.onPause();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"equal function call ",Toast.LENGTH_LONG).show();
+        }*/
+        super.onPause();
+    }
+
+    @Override
+    public void onStop() {
+        /*int time=youTubePlayer.getCurrentTimeMillis();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("pauseVideoTime",time);
+        editor.putString("pauseVideoId",playing_video_id);
+
+        editor.apply();
+        editor.commit();
+        super.onStop();*/
+
+        super.onStop();
+    }
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
         @Override
         public void onPlaying() {
@@ -484,10 +591,10 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
         @Override
         public void onPaused() {
-
-            String abc= String.valueOf(playing_video_id.length());
-            Toast.makeText(getApplicationContext(),"On video pause function Cal "+abc,Toast.LENGTH_LONG).show();
+            //not working...
+           // Toast.makeText(getApplicationContext(),"onPaused methode",Toast.LENGTH_LONG).show();
         }
+
 
         @Override
         public void onStopped() {
@@ -525,9 +632,9 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         @Override
         public void onVideoStarted() {
             String current= playing_video_id;
-
+            //not working......
             int myIndex=1;
-            Toast.makeText(getApplicationContext(),"test mode"+current,Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"test mode"+current,Toast.LENGTH_LONG).show();
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("currentVideo",current);
@@ -552,6 +659,9 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
         int index = 0;
         @Override
         public void onVideoEnded() {
+
+            //not working......
+            //Toast.makeText(getApplicationContext(),"onVideoEnded",Toast.LENGTH_LONG).show();
 
             String play= String.valueOf(playListItems.size());
 
@@ -614,7 +724,22 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        final String CateGory=sharedPreferences.getString("Title_Name","as");
+        final String fb_CateGoryName=sharedPreferences.getString("fb_title_Name","as");
+
+       // Toast.makeText(getApplicationContext(),"testing msag",Toast.LENGTH_LONG).show();
+
+        Intent ne = new Intent(getApplicationContext(),Sub_Mark.class);
+        Bundle bundle=new Bundle();
+        String Radio=fb_CateGoryName;
+        String txtRadio=CateGory;
+        bundle.putString("title",txtRadio);
+        bundle.putString("Radeio",Radio);
+        ne.putExtras(bundle);
+        startActivity(ne);
+        finish();
     }
    /* @Override
     public void onBackPressed() {

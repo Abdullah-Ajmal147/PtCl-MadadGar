@@ -59,7 +59,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="40dp"
-
+        android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="0dp"
         android:gravity="center"
@@ -78,9 +78,9 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:gravity="center"
-        android:text="Following are the training module, choose and learn"
+        android:text="Following are the training modules, choose and learn"
         android:textColor="#555353"
-        android:fontFamily="@font/montserrat_regular"
+        android:fontFamily="@font/poppins_bold"
         android:textSize="20dp"
         android:textStyle="bold" />
 
