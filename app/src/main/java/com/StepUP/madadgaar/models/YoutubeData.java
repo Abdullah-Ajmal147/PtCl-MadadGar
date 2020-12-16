@@ -8,6 +8,16 @@ public class YoutubeData implements Serializable {
     private String thumbnail;
     private String vedio_id;
 
+    public String getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(String quiz) {
+        this.quiz = quiz;
+    }
+
+    private String quiz;
+
     public YoutubeData(String title, String thumbnail, String vedio_id) {
         this.title = title;
         this.thumbnail = thumbnail;

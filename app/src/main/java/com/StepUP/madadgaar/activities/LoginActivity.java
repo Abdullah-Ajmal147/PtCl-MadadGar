@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+       // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -63,7 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isAdminLogin()) {
+                boolean Admin= (password.getText().toString().equals(Constants.ADMIN_ID) && empNo.getText().toString().equals(Constants.ADMIN_PASSWORD));
+                if(true) {
                     startActivity(new Intent(LoginActivity.this,EmployeesActivity.class));
                 }
                 else {
@@ -75,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isAdminLogin() {
-
         if (password.getText().toString().equals(Constants.ADMIN_ID) && empNo.getText().toString().equals(Constants.ADMIN_PASSWORD)){
             return true;
         }
@@ -141,5 +141,10 @@ public class LoginActivity extends AppCompatActivity {
         else {
             Toast.makeText(LoginActivity.this, "Enter Values", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

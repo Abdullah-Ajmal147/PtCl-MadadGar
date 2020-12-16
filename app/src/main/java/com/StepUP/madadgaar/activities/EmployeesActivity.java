@@ -6,10 +6,12 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -37,8 +39,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EmployeesActivity extends AppCompatActivity {
 
@@ -62,7 +66,7 @@ public class EmployeesActivity extends AppCompatActivity {
         tableRow = findViewById(R.id.tableRow);
         emp_no = findViewById(R.id.emp_no);
         name = findViewById(R.id.name);
-        mobile = findViewById(R.id.mobile);
+        //mobile = findViewById(R.id.mobile);
         users = findViewById(R.id.users);
         region = findViewById(R.id.regions);
         search = findViewById(R.id.btn_search);
@@ -72,7 +76,7 @@ public class EmployeesActivity extends AppCompatActivity {
         last = findViewById(R.id.last);
 
         progressDialog = new ProgressDialog(EmployeesActivity.this);
-
+        getEmployess();
         regionInList();
         applyFilter();
 
@@ -96,33 +100,58 @@ public class EmployeesActivity extends AppCompatActivity {
         });
     }
     private void getEmployess() {
-
+       final int a=0;
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
-
+        //final int[] finalArr = arr;
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                SharedPreferences sharedPreferences1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 if (dataSnapshot.exists()) {
                     srNo = 0;
-
-                    users.setText(String.valueOf(dataSnapshot.getChildrenCount()));
+                    //users.setText(String.valueOf(dataSnapshot.getChildrenCount()));
+                    // users.setText(String.valueOf(dataSnapshot.getChildrenCount()));
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+                    editor1.putInt("i", 0);
+                    editor1.commit();
                     printList.clear();
                     for (DataSnapshot empList : dataSnapshot.getChildren()) {
 
                         Model model = new Model();
                         model.setEmp_no(empList.child("emp_no").getValue(String.class));
-                        model.setName(empList.child("name").getValue(String.class));
+                        model.setName(empList.child("txtfullName").getValue(String.class));
                         model.setMobile(empList.child("mobile").getValue(String.class));
-
                         getTcc(empList.child("uid").getValue(String.class), model);
+                        String status = String.valueOf(empList.child("status").getValue());
+                        if (status != null && status.equals("true")) {
+                            // SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                            int i = sharedPreferences.getInt("i", 0);
+                            //i=a+1;
+                            i++;
+                            //users.setText(String.valueOf(i));
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putInt("i", i);
+                            editor.apply();
+                            editor.commit();
 
+                        }
+                        //model.setStatus(empList.child("status").get());
+
+                       /*if ((dataSnapshot.child("status").getValue(false)) {
+                           Toast.makeText(getApplicationContext(),"testing",Toast.LENGTH_LONG).show();
+                        } else {
+
+                        }*/
                     }
 
                 }
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                int a=sharedPreferences.getInt("i",0);
+                users.setText(String.valueOf(a));
                 progressDialog.dismiss();
             }
 
@@ -181,9 +210,16 @@ public class EmployeesActivity extends AppCompatActivity {
         tableRow.addView(index);
         tableRow.addView(emp_no);
         tableRow.addView(name);
-        tableRow.addView(mobile);
+        //tableRow.addView(mobile);
         tableRow.addView(user_tcc);
 
+        tableRow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                TableRow t = (TableRow) view;
+                TextView firstTextView = (TextView) t.getChildAt(2);
+                Toast.makeText(getApplicationContext(),firstTextView.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
         tableLayout.addView(tableRow);
     }
     private void applyFilter() {

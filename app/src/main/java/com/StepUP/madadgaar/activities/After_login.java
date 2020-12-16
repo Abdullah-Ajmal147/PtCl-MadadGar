@@ -72,8 +72,10 @@ public class After_login extends AppCompatActivity {
         btnhelpCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
+                String contact = "+923335311123";
+                String message ="Dear \n" +
+                        "Raheem Zeeshan\n" +
+                        "Manager (Training & Development)";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -81,7 +83,7 @@ public class After_login extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Intent i = new Intent(Intent.ACTION_VIEW);
-              /*  i.setAction(Intent.ACTION_SEND);
+              /* i.setAction(Intent.ACTION_SEND);
                 i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 i.setType("text/plain");*/
                 i.setData(Uri.parse(url));

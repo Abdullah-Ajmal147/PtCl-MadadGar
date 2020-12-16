@@ -143,20 +143,20 @@ public class QuestionsAdapter extends PagerAdapter {
                 if ("a".equals(questionList.get(position).getCorrect())) {
                     addToCorrectAnswer(position);
                     //option1.setTextColor(R.drawable.ques_color_true);
-                    option1.setTextColor(Color.parseColor("#0b46f6"));
+                    option1.setTextColor(Color.parseColor("#0289fc"));
                    // ((QuizActivity)context).hideMethode();
                 } /*else {
                     option1.setTextColor(R.drawable.ques_color_true);
                 }*/
                 if ("b".equals(questionList.get(position).getCorrect())) {
                     //option2.setTextColor(R.drawable.ques_color_true);
-                    option1.setTextColor(Color.parseColor("#0b46f6"));
+                    option1.setTextColor(Color.parseColor("#0289fc"));
                     //((QuizActivity)context).hideMethode();
 
                 }
                 if ("c".equals(questionList.get(position).getCorrect())) {
                     //option3.setTextColor(R.drawable.ques_color_true);
-                    option1.setTextColor(Color.parseColor("#0b46f6"));
+                    option1.setTextColor(Color.parseColor("#0289fc"));
                    // ((QuizActivity)context).hideMethode();
 
                 }
@@ -173,19 +173,19 @@ public class QuestionsAdapter extends PagerAdapter {
                     addToCorrectAnswer(position);
                    // option2.setTextColor(R.drawable.ques_color_true);
                    // option2.setTextColor(Integer.parseInt("#F60B0B"));
-                    option2.setTextColor(Color.parseColor("#0b46f6"));
+                    option2.setTextColor(Color.parseColor("#0289fc"));
 
                 }/* else {
                     option2.setTextColor(R.drawable.ques_color_true);
                 }*/
                 if ("a".equals(questionList.get(position).getCorrect())) {
                     //option1.setTextColor(R.drawable.ques_color_true);
-                    option2.setTextColor(Color.parseColor("#0b46f6"));
+                    option2.setTextColor(Color.parseColor("#0289fc"));
 
                 }
                 if ("c".equals(questionList.get(position).getCorrect())) {
                     //option3.setTextColor(R.drawable.ques_color_true);
-                    option2.setTextColor(Color.parseColor("#0b46f6"));
+                    option2.setTextColor(Color.parseColor("#0289fc"));
 
                 }
             }
@@ -201,7 +201,7 @@ public class QuestionsAdapter extends PagerAdapter {
                     addToCorrectAnswer(position);
                    // option3.setTextColor(R.drawable.ques_color_true);
                    // option3.setTextColor(Integer.parseInt("#F60B0B"));
-                    option3.setTextColor(Color.parseColor("#0b46f6"));
+                    option3.setTextColor(Color.parseColor("#0289fc"));
                     //option3.setTextColor(Color.RED);
 
 
@@ -210,12 +210,12 @@ public class QuestionsAdapter extends PagerAdapter {
                 }*/
                 if ("b".equals(questionList.get(position).getCorrect())) {
                     //option2.setTextColor(R.drawable.ques_color_true);
-                    option3.setTextColor(Color.parseColor("#0b46f6"));
+                    option3.setTextColor(Color.parseColor("#0289fc"));
 
                 }
                 if ("a".equals(questionList.get(position).getCorrect())) {
                   //  option1.setTextColor(R.drawable.ques_color_true);
-                    option3.setTextColor(Color.parseColor("#0b46f6"));
+                    option3.setTextColor(Color.parseColor("#0289fc"));
 
                 }
             }

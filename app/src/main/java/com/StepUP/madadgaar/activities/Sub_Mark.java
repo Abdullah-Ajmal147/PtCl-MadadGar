@@ -78,8 +78,10 @@ public class Sub_Mark extends AppCompatActivity {
         btnhelpCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
+                String contact = "+923335311123";
+                String message ="Dear \n" +
+                        "Raheem Zeeshan\n" +
+                        "Manager (Training & Development)";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -87,7 +89,7 @@ public class Sub_Mark extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Intent i = new Intent(Intent.ACTION_VIEW);
-              /*  i.setAction(Intent.ACTION_SEND);
+              /* i.setAction(Intent.ACTION_SEND);
                 i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 i.setType("text/plain");*/
                 i.setData(Uri.parse(url));
@@ -112,8 +114,10 @@ public class Sub_Mark extends AppCompatActivity {
         ContacUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
+                String contact = "+923335311123";
+                String message ="Dear \n" +
+                        "Raheem Zeeshan\n" +
+                        "Manager (Training & Development)";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -121,7 +125,7 @@ public class Sub_Mark extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Intent i = new Intent(Intent.ACTION_VIEW);
-              /*  i.setAction(Intent.ACTION_SEND);
+              /* i.setAction(Intent.ACTION_SEND);
                 i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 i.setType("text/plain");*/
                 i.setData(Uri.parse(url));
@@ -177,7 +181,8 @@ public class Sub_Mark extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+       Intent ne =new Intent(getApplicationContext(),After_login.class);
+       startActivity(ne);
         finish();
     }
 }

@@ -7,6 +7,7 @@ public class Model {
     private String mobile;
     private String region;
     private int tcc;
+    boolean status;
     private int communication;
     private int work_place_ethics;
     private int customer_service;
@@ -39,6 +40,14 @@ public class Model {
         this.copper_test_equipments = copper_test_equipments;
         this.gpon_installation = gpon_installation;
         this.optical_fiber = optical_fiber;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public String getEmp_no() {
@@ -167,5 +176,9 @@ public class Model {
 
     public void setOptical_fiber(int optical_fiber) {
         this.optical_fiber = optical_fiber;
+    }
+
+
+    public void setStatus(Object status) {
     }
 }
