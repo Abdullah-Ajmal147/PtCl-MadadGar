@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.StepUP.madadgaar.R;
 import com.StepUP.madadgaar.adapters.Approved_Adapter;
+import com.StepUP.madadgaar.adapters.Pending_Adapter;
 import com.StepUP.madadgaar.models.Approved_Model;
 import com.StepUP.madadgaar.models.Video_id_Model;
 import com.StepUP.madadgaar.utils.UserPreferences;
@@ -33,22 +34,23 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reporting_Screen extends AppCompatActivity {
+public class Pending_User_Screen extends AppCompatActivity {
 
     Button btnhelpCenter;
     ImageView Button_nav;
     DrawerLayout mdrawerlayout;
     TextView txthome,aboutUs,ContacUs,Logout;
+    private UserPreferences cache;
+
     RecyclerView recyerView_Approved;
     TextView txtApproved_user;
     List<Approved_Model> lstTopics;
-    private Approved_Adapter adapter;
+    private Pending_Adapter adapter;
     private DatabaseReference rootRef,topicsRef;
-    private UserPreferences cache;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reporting__screen);
+        setContentView(R.layout.activity_pending__user__screen);
 
         cache = UserPreferences.getInstance(this);
         txthome =findViewById(R.id.home);
@@ -59,9 +61,9 @@ public class Reporting_Screen extends AppCompatActivity {
         btnhelpCenter=findViewById(R.id.btnhelpCenter);
         mdrawerlayout=findViewById(R.id.Drawer_about);
         lstTopics = new ArrayList<>();
-        recyerView_Approved=findViewById(R.id.recyerView_Approved);
+        recyerView_Approved=findViewById(R.id.recyerView_pending);
         recyerView_Approved.setLayoutManager(new LinearLayoutManager(this));
-        txtApproved_user=findViewById(R.id.txtApproved_user);
+        txtApproved_user=findViewById(R.id.txtpending_user);
 
         rootRef= FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -75,14 +77,14 @@ public class Reporting_Screen extends AppCompatActivity {
 
                 for(final DataSnapshot da:dataSnapshot.getChildren()){
                     String status = String.valueOf(da.child("status").getValue());
-                    if (status != null && status.equals("true")) {
+                    if (status != null && status.equals("false")) {
                         Approved_Model approved_model=new Approved_Model();
-                    approved_model.setFulName(String.valueOf(da.child("txtfullName").getValue()));
-                    approved_model.setEmp_no(String.valueOf(da.child("emp_no").getValue()));
-                    approved_model.setRegion(String.valueOf(da.child("region").getValue()));
-                    approved_model.setEmail(String.valueOf(da.child("email").getValue()));
-                    approved_model.setPassword(String.valueOf(da.child("password").getValue()));
-                    approved_model.setMobileNumber(String.valueOf(da.child("mobile").getValue()));
+                        approved_model.setFulName(String.valueOf(da.child("txtfullName").getValue()));
+                        approved_model.setEmp_no(String.valueOf(da.child("emp_no").getValue()));
+                        approved_model.setRegion(String.valueOf(da.child("region").getValue()));
+                        approved_model.setEmail(String.valueOf(da.child("email").getValue()));
+                        approved_model.setPassword(String.valueOf(da.child("password").getValue()));
+                        approved_model.setMobileNumber(String.valueOf(da.child("mobile").getValue()));
                         approved_model.setCategory(String.valueOf(da.child("Category").getValue()));
                         approved_model.setUid(String.valueOf(da.child("uid").getValue()));
 
@@ -106,7 +108,7 @@ public class Reporting_Screen extends AppCompatActivity {
                 txtApproved_user.setText(String.valueOf(a));
                 //progressDialog.dismiss();
 
-                adapter=new Approved_Adapter(getApplicationContext(),lstTopics,rootRef);
+                adapter=new Pending_Adapter(getApplicationContext(),lstTopics,rootRef);
                 recyerView_Approved.setAdapter(adapter);
             }
 
@@ -146,7 +148,7 @@ public class Reporting_Screen extends AppCompatActivity {
         txthome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ne =new Intent(getApplicationContext(),After_login.class);
+                Intent ne =new Intent(getApplicationContext(),Pending_User_Screen.class);
                 startActivity(ne);
                 finish();
             }
@@ -154,7 +156,7 @@ public class Reporting_Screen extends AppCompatActivity {
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ne = new Intent(getApplicationContext(), Pending_User_Screen.class);
+                Intent ne = new Intent(getApplicationContext(), Reporting_Screen.class);
                 startActivity(ne);
                 finish();
             }
@@ -189,13 +191,10 @@ public class Reporting_Screen extends AppCompatActivity {
                 finish();
             }
         });
-//        txtApproved_user.setText(total);
     }
 
     @Override
     public void onBackPressed() {
-        Intent ne =new Intent(getApplicationContext(),Pending_User_Screen.class);
-        startActivity(ne);
         finish();
     }
 }

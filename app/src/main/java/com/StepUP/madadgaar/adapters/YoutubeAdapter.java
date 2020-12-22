@@ -216,7 +216,7 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
         }
     }
 
-    private void watched(String vedio_id) {
+    /*private void watched(String vedio_id) {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(Constants.WATCHED)
                 .child(uid).child(play_list_id);
@@ -236,7 +236,7 @@ public class  YoutubeAdapter extends RecyclerView.Adapter<YoutubeAdapter.Youtube
             }
         });
 
-    }
+    }*/
 
     @Override
     public int getItemCount() {

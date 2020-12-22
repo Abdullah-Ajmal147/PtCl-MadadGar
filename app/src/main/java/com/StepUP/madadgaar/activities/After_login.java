@@ -107,8 +107,10 @@ public class After_login extends AppCompatActivity {
         ContacUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
+                String contact = "+923335311123";
+                String message ="Dear \n" +
+                        "Raheem Zeeshan\n" +
+                        "Manager (Training & Development)";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -116,11 +118,12 @@ public class After_login extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Intent i = new Intent(Intent.ACTION_VIEW);
-              /*  i.setAction(Intent.ACTION_SEND);
+              /* i.setAction(Intent.ACTION_SEND);
                 i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 i.setType("text/plain");*/
                 i.setData(Uri.parse(url));
                 startActivity(i);
+
             }
         });
         Logout.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +181,7 @@ public class After_login extends AppCompatActivity {
                 bundle.putString("Radeio",Radio);
                 ne.putExtras(bundle);
                 startActivity(ne);
+                finish();
             }
         });
         txtTransport.setOnClickListener(new View.OnClickListener() {
@@ -191,6 +195,7 @@ public class After_login extends AppCompatActivity {
                 bundle.putString("Radeio",Transport);
                 ne.putExtras(bundle);
                 startActivity(ne);
+                finish();
             }
         });
         txtMeter.setOnClickListener(new View.OnClickListener() {
@@ -204,6 +209,7 @@ public class After_login extends AppCompatActivity {
                 bundle.putString("Radeio",Metro);
                 ne.putExtras(bundle);
                 startActivity(ne);
+                finish();
             }
         });
         txtPower.setOnClickListener(new View.OnClickListener() {
@@ -217,6 +223,7 @@ public class After_login extends AppCompatActivity {
                 bundle.putString("Radeio",Power);
                 ne.putExtras(bundle);
                 startActivity(ne);
+                finish();
             }
         });
         txtSwitich.setOnClickListener(new View.OnClickListener() {
@@ -230,6 +237,7 @@ public class After_login extends AppCompatActivity {
                 bundle.putString("Radeio",Switich);
                 ne.putExtras(bundle);
                 startActivity(ne);
+                finish();
             }
         });
 
@@ -279,15 +287,20 @@ public class After_login extends AppCompatActivity {
         NetworkInfo activeNetwork=manager.getActiveNetworkInfo();
         if(null!=activeNetwork){
             if(activeNetwork.getType()==ConnectivityManager.TYPE_WIFI){
-                Toast.makeText(getApplicationContext(),"WIFI Enabled",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"WIFI Enabled",Toast.LENGTH_SHORT).show();
             }
             else if(activeNetwork.getType()==ConnectivityManager.TYPE_MOBILE){
-                Toast.makeText(getApplicationContext(),"Mobile Data Enabled",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Mobile Data Enabled",Toast.LENGTH_SHORT).show();
             }
         }else {
-            Toast.makeText(getApplicationContext(),"No Internet Connection",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"No Internet Connection",Toast.LENGTH_SHORT).show();
             Intent ne = new Intent(getApplicationContext(),No_Internet.class);
             startActivity(ne);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

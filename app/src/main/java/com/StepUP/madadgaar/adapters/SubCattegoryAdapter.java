@@ -61,52 +61,6 @@ public class SubCattegoryAdapter extends RecyclerView.Adapter<SubCategoryViewHol
         //subCategoryViewHolder.checkbox.findViewById(R.id.checkbox);
         calculateResult(playListId, 5, holder);
 
-        /*subCategoryViewHolder.txthome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent ne =new Intent(c, After_login.class);
-                c.startActivity(ne);
-            }
-        });
-        subCategoryViewHolder.aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent ne =new Intent(c, About_Us.class);
-                c.startActivity(ne);
-            }
-        });
-        subCategoryViewHolder.ContacUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String contact = "+923088743044";
-                String message ="Hi PTCL...";
-                String url = null;
-                try {
-                    url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-                Intent i = new Intent(Intent.ACTION_VIEW);
-              *//*  i.setAction(Intent.ACTION_SEND);
-                i.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
-                i.setType("text/plain");*//*
-                i.setData(Uri.parse(url));
-                c.startActivity(i);
-            }
-        });
-        subCategoryViewHolder.Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        subCategoryViewHolder.Button_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                holder.mdrawerlayout.openDrawer(Gravity.LEFT);
-            }
-        });*/
 
         holder.txtTopicTitle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +87,7 @@ public class SubCattegoryAdapter extends RecyclerView.Adapter<SubCategoryViewHol
 
                 editor.putString("subCategoryName", MainTitle);
                 editor.commit();
+                editor.apply();
 
                 intent.putExtra("MainTitle", MainTitle);
                 intent.putExtra("title", title);

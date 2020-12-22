@@ -60,14 +60,14 @@
 
                 <TextView
                     android:id="@+id/checkbox"
-                    android:layout_width="wrap_content"
+                    android:layout_width="23dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:gravity="center"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="30dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/play_icon" />
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/play_icon"
+                    android:gravity="center" />
 
             </FrameLayout>
 

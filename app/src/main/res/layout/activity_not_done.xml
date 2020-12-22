@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_bold"
-                android:text="You have passed the module"
+                android:text="You have fail the module"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 

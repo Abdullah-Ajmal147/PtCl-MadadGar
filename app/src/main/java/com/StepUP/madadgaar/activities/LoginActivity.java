@@ -64,13 +64,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean Admin= (password.getText().toString().equals(Constants.ADMIN_ID) && empNo.getText().toString().equals(Constants.ADMIN_PASSWORD));
-                if(true) {
-                    startActivity(new Intent(LoginActivity.this,EmployeesActivity.class));
+                longinUser();
+                progressBar.setVisibility(View.VISIBLE);
+               /* if(isAdminLogin()) {
+                    startActivity(new Intent(LoginActivity.this,Reporting_Screen.class));
                 }
                 else {
                     longinUser();
                     progressBar.setVisibility(View.VISIBLE);
-                }
+                }*/
             }
         });
     }
@@ -106,14 +108,19 @@ public class LoginActivity extends AppCompatActivity {
                             }*/
                             String name=dataSnapshot1.child("txtfullName").getValue().toString();
                             String status=dataSnapshot1.child("status").getValue().toString();
+                            String check=dataSnapshot1.child("emp_no").getValue().toString();
                             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("uid", dataSnapshot1.child("uid").getValue().toString());
                             editor.putString("uniqueName", name);
                             editor.commit();
                             Log.d("Name==", name);
-
-                            if(status!="true"){
+                            if(check.equals("admin"))
+                            {
+                                startActivity(new Intent(LoginActivity.this,Pending_User_Screen.class));
+                                finish();
+                            }else {
+                            if(!status.equals("true")){
                                 Toast.makeText(getApplicationContext(),"Waiting For Approval",Toast.LENGTH_LONG).show();
                                 Intent ne=new Intent(getApplicationContext(),Alert_Screen.class);
                                 progressBar.setVisibility(View.GONE);
@@ -125,6 +132,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(LoginActivity.this, After_login.class));
                                 finish();
                             }
+                          }
                         }
                     } else {
                         progressBar.setVisibility(View.GONE);
