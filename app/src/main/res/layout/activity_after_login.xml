@@ -185,6 +185,23 @@
                         android:src="@drawable/sw"
                         android:layout_gravity="center" />
                     </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/bg_edit_text">
+                        <ImageView
+                            android:id="@+id/txtfmc"
+                            android:layout_width="150dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/fmc"
+                            android:layout_gravity="center"
+                            />
+                    </FrameLayout>
+
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="20dp"

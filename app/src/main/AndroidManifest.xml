@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.StepUP.madadgaar">
+    package="com.stepup.madadgaar">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,37 +13,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Reporting_Delete_User"></activity>
-        <activity android:name=".activities.User_for_Approval" />
-        <activity android:name=".activities.Pending_User_Screen" />
-        <activity android:name=".activities.Reporting_Screen" />
-        <activity android:name=".activities.Alert_Screen" />
-        <activity android:name=".activities.No_Internet" />
-        <activity android:name=".activities.About_Us" />
-        <activity android:name=".activities.Not_done" />
-        <activity android:name=".activities.Done_Activity" />
-        <activity android:name=".activities.Sub_Mark" />
-        <activity android:name=".activities.Add_Video_Id" />
-        <activity android:name=".activities.EmployeesActivity" />
-        <activity android:name=".activities.AdminActivity" />
-        <activity android:name=".activities.LevelCompletedActivity" />
-        <activity android:name=".activities.TechnicalActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.QuizActivity" />
-        <activity android:name=".activities.Admin" />
-        <activity android:name=".activities.VideoActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.SubCategoryActivity" />
-        <activity android:name=".activities.CategoryActivity" />
-        <activity android:name=".activities.SplashActivity">
+        <activity android:name="com.stepup.madadgaar.activities.Reporting_Delete_User"></activity>
+        <activity android:name="com.stepup.madadgaar.activities.User_for_Approval" />
+        <activity android:name="com.stepup.madadgaar.activities.Pending_User_Screen" />
+        <activity android:name="com.stepup.madadgaar.activities.Reporting_Screen" />
+        <activity android:name="com.stepup.madadgaar.activities.Alert_Screen" />
+        <activity android:name="com.stepup.madadgaar.activities.No_Internet" />
+        <activity android:name="com.stepup.madadgaar.activities.About_Us" />
+        <activity android:name="com.stepup.madadgaar.activities.Not_done" />
+        <activity android:name="com.stepup.madadgaar.activities.Done_Activity" />
+        <activity android:name="com.stepup.madadgaar.activities.Sub_Mark" />
+        <activity android:name="com.stepup.madadgaar.activities.Add_Video_Id" >
+
+        </activity>
+        <activity android:name="com.stepup.madadgaar.activities.EmployeesActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.AdminActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.LevelCompletedActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.TechnicalActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.LoginActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.QuizActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.Admin" />
+        <activity android:name="com.stepup.madadgaar.activities.VideoActivity" />
+        <activity android:name="com.stepup.madadgaar.MainActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.RegisterActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.SubCategoryActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.CategoryActivity" />
+        <activity android:name="com.stepup.madadgaar.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.After_login" />
+        <activity android:name="com.stepup.madadgaar.activities.After_login" />
 
         <meta-data
             android:name="preloaded_fonts"

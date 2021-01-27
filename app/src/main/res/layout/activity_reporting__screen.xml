@@ -72,7 +72,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="250dp"
             android:layout_below="@+id/layoutbelow"
             android:layout_marginTop="20dp"
             android:id="@+id/recyerView_Approved"
@@ -100,6 +100,24 @@
 
 
     </FrameLayout>
+
+        <Button
+            android:id="@+id/download"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="90dp"
+            android:background="@drawable/bg_start_quiz"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Download"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
         <Button
             android:id="@+id/btnhelpCenter"
             android:layout_width="match_parent"
@@ -113,7 +131,6 @@
             android:textColor="#ffffff"
             android:fontFamily="@font/poppins_bold"
             android:textSize="15dp"
-
             />
 
         <ImageView
