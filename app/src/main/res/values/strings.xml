@@ -62,7 +62,7 @@
     <string name="tcc">TCC</string>
     <string name="lr">Download LR</string>
 
-    <string name="About_Us">Step up is a Digital Training Course Having five Technical Modules named as Power Plant,Metro Transmission,Transport Networks,Switching and Radio wireless System.A soft skills Module Customer Care is part of each course.The Objective of Step Up Trainig Course is to enhance the knowlegde and skill sets of non-mangement employees working in the above mentioned five domains so that they can perform their jobs more effectively and efficiently.The training course entail short quizzes for each Module.</string>
+    <string name="About_Us">Step up is a Digital Training Course Having Six Technical Modules named as Power Plant, Metro Transmission, Transport Network, FMC, Switching and Radio Wireless System. A soft skills Module Customer Care is part of each course. The Objective of Step up Training Course is to enhance the knowledge and skill sets of non-management employees working in the above mentioned six domains so that they can perform their jobs more effectively and efficiently. The training course entail short quizzes for each Module.</string>
     <string name="Alert">Hi there, \nWelcome to the Step Up.Your login is being approved by the adamin Please wait until your approval.For any update contact our support center through the link below.Sorry for inconveniense.</string>
 
     <string name="sr">Download SR</string>
@@ -95,6 +95,8 @@
         <item><b>Metro Transmission</b></item>
         <item><b>Power Plant</b></item>
         <item><b>Switching</b></item>
+        <item><b>FMC</b></item>
+        <item><b>Other</b></item>
 
     </string-array>
 
