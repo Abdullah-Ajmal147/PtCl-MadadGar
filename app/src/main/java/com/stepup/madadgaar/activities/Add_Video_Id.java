@@ -74,8 +74,5 @@ public class Add_Video_Id extends AppCompatActivity {
                 });
             }
         });
-
-
-
     }
 }

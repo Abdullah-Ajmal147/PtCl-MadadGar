@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -116,6 +117,7 @@ public class Pending_User_Screen extends AppCompatActivity {
             }
         });
         Button_nav.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("RtlHardcoded")
             @Override
             public void onClick(View view) {
                 mdrawerlayout.openDrawer(Gravity.LEFT);
@@ -125,10 +127,9 @@ public class Pending_User_Screen extends AppCompatActivity {
         btnhelpCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923335311123";
-                String message ="Dear \n" +
-                        "Raheem Zeeshan\n" +
-                        "Manager (Training & Development)";
+                String contact = "+923347694700";
+                String message ="Ashraf Javed\n" +
+                               "Manager Training Admin \n";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");
@@ -162,10 +163,9 @@ public class Pending_User_Screen extends AppCompatActivity {
         ContacUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String contact = "+923335311123";
-                String message ="Dear \n" +
-                        "Raheem Zeeshan\n" +
-                        "Manager (Training & Development)";
+                String contact = "+923347694700";
+                String message ="Ashraf Javed\n" +
+                        "Manager Training Admin \n";
                 String url = null;
                 try {
                     url = "https://api.whatsapp.com/send?phone="+contact+"&text="+ URLEncoder.encode(message, "UTF-8");

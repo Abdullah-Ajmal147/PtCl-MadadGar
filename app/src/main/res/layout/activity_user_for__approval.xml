@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -279,7 +288,7 @@
             <Button
                 android:id="@+id/btnYes"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_no_yes_"
             android:text="Yes"
             android:fontFamily="@font/poppins_bold"
@@ -290,7 +299,7 @@
             <Button
                 android:id="@+id/btnNo"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bg_no_yes_"
                 android:layout_marginStart="100dp"
                 android:fontFamily="@font/poppins_bold"
@@ -300,5 +309,11 @@
                 android:textColor="#1291fc"
                 />
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            ></View>
     </LinearLayout>
 </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

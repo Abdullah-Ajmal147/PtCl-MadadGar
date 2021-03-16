@@ -14,6 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ProgressBar
+            android:id="@+id/progressRealm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="283dp"
+            android:visibility="gone"
+            android:layout_marginEnd="181dp"
+            android:layout_marginBottom="327dp" />
+
         <TextView
             android:id="@+id/admin"
             android:layout_width="wrap_content"

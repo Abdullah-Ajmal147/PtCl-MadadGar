@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.stepup.madadgaar">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.stepup.madadgaar.activities.Reporting_Delete_User"></activity>
+        <activity
+            android:name="com.stepup.madadgaar.PdfCreatorActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.TransparentStatusBar"
+             />
+        <activity
+            android:name="com.stepup.madadgaar.PdfViewerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.TransparentStatusBar"
+             />
+        <activity
+            android:name="com.stepup.madadgaar.PdfEditorActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.TransparentStatusBar"
+             />
+
+        <activity android:name="com.stepup.madadgaar.activities.Reporting_Delete_User" />
         <activity android:name="com.stepup.madadgaar.activities.User_for_Approval" />
         <activity android:name="com.stepup.madadgaar.activities.Pending_User_Screen" />
-        <activity android:name="com.stepup.madadgaar.activities.Reporting_Screen" />
+        <activity android:name="com.stepup.madadgaar.activities.Reporting_Screen" >
+
+        </activity>
         <activity android:name="com.stepup.madadgaar.activities.Alert_Screen" />
         <activity android:name="com.stepup.madadgaar.activities.No_Internet" />
         <activity android:name="com.stepup.madadgaar.activities.About_Us" />
@@ -46,6 +70,16 @@
             </intent-filter>
         </activity>
         <activity android:name="com.stepup.madadgaar.activities.After_login" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
 
         <meta-data
             android:name="preloaded_fonts"

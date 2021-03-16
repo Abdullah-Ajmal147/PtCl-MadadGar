@@ -3,7 +3,7 @@
     android:shape="rectangle"
     >
 
-    <solid android:color="@color/yallow_parent"/>
+    <solid android:color="@color/bg_notifacation"/>
     <corners android:radius="6dp"/>
 
 </shape>

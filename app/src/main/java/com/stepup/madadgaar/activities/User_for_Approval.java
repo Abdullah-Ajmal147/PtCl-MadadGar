@@ -56,7 +56,9 @@ public class User_for_Approval extends AppCompatActivity {
                 DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Users").child(uid);
                 databaseReference.child("status").setValue("true");
                 Toast.makeText(getApplicationContext(),"Successfully Update User",Toast.LENGTH_SHORT).show();
+                notify();
                 finish();
+
             }
         });
         btnNo.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +67,10 @@ public class User_for_Approval extends AppCompatActivity {
                 DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Users").child(uid);
                 databaseReference.removeValue();
                 Toast.makeText(getApplicationContext(),"Successfully Deleted User",Toast.LENGTH_SHORT).show();
+                notify();
                 finish();
+
+
             }
         });
 

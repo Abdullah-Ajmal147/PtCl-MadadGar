@@ -9,9 +9,28 @@ public class Approved_Model  {
     private String mobileNumber;
     private String uid;
     private String category;
-    private int tcc;
+    private String tccName;
+    private long tcc;
+
+    public long getScore() {
+        return score;
+    }
+
+    public void setScore(long score) {
+        this.score = score;
+    }
+
+    private long score;
     public Approved_Model(){
 
+    }
+
+    public String getTccName() {
+        return tccName;
+    }
+
+    public void setTccName(String tccName) {
+        this.tccName = tccName;
     }
 
     public String getCategory() {
@@ -34,7 +53,7 @@ public class Approved_Model  {
         this.uid = uid;
     }
 
-    public int getTcc() {
+    public long getTcc() {
         return tcc;
     }
 
